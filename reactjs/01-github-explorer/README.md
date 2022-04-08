@@ -3,31 +3,6 @@
 01-github-explorer em 06/04/2022
 
 --------------------------------------------------------------
-webpack.config.js --------------------------------------------------------
-
-const path = require('path')
-
-module.exports = {
-    mode: 'development',
-    entry: path.resolve(__dirname, 'src', 'index.jsx'),
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
-    },
-    resolve: {
-        extensions: ['.js', '.jsx']
-    },
-    module: {
-        rules: [
-            {
-                test: /\.jsx$/,
-                exclude: /node_modules/,
-                use: 'babel-loader'
-            }
-        ]
-    }
-}
-
 
 babel.config,js --------------------------------------------------------
 
@@ -68,7 +43,3 @@ createRoot(document.getElementById('root')).render(<App tab="home" />)
 // render(<App />, document.getElementById('root'))
 
 // render(<h1>Test</h1>, document.getElementById('root'))
-
-// function App() {
-//     return <h1> Hello World</h1>
-// }
