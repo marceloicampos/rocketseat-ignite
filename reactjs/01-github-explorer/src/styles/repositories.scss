@@ -1,0 +1,57 @@
+section.repository-list {
+    h1 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+        margin-bottom: 16px;
+    }
+
+    img {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+        margin: 0 auto;
+        border-radius: 160px;
+        height: 200px;
+        width: 200px;
+    }
+
+    ul {
+        list-style: none;
+
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: left;
+            margin: 0 auto;
+            & + li {
+                margin-top: 20px;
+                // dentro sass o & faz referência ao próprio elemento e com o + pegamos os próximos elementos, ou seja, ele da margin-top a partir do próximo elemento em referência ao inicial
+            }
+        }
+
+        // li {
+        //     margin-bottom: 20px;
+        //     &:last-child {
+        //         margin: 0;
+        //         // nesse caso pegamos o último elemento e damos margin 0
+        //     }
+        // }
+
+        p {
+            font-size: 16px;
+            color: #c8c8c8;
+            margin-top: 8px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 16px;
+            text-decoration: none;
+            color: #8257e6;
+        }
+    }
+}

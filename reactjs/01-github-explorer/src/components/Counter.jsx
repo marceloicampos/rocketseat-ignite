@@ -16,11 +16,12 @@ export function Counter() {
     }
     return (
         <div>
-            <h2>Clique abaixo para Incrementar o Contador {counter}</h2>
+            <h2>Counter {counter}</h2>
+            <h3>clique para Incrementar o Contador</h3>
             <button type="button" onClick={Increment}>
                 Increment + 1
             </button>
-            <h2>ou Clique abaixo para Zera o Contador</h2>
+            <h3>clique para Zerar o Contador</h3>
             <button type="button" onClick={Reset}>
                 Reset
             </button>
