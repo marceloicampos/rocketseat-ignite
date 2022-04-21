@@ -1,5 +1,6 @@
 // import React from 'react' - eliminamos essa importação com o react preset runtime automatic no babel
 // import { render } from 'react-dom' - eliminamos essa importação com o novo modelo de criação de root descrito abaixo de acordo com react 18
+
 import { createRoot } from 'react-dom/client'
 import { App } from './App'
 

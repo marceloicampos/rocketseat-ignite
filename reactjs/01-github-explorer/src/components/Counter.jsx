@@ -18,7 +18,7 @@ export function Counter() {
         <div>
             <h2>Clique abaixo para Incrementar o Contador {counter}</h2>
             <button type="button" onClick={Increment}>
-                Increment
+                Increment + 1
             </button>
             <h2>ou Clique abaixo para Zera o Contador</h2>
             <button type="button" onClick={Reset}>
