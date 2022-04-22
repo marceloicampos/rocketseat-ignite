@@ -9,6 +9,8 @@ interface Repository {
     full_name: string;
 }
 
+// nota: só precisamos TIPAR as informações que vamos usar na aplicação
+
 export function RepositoryList() {
     const [repositories, setRepositories] = useState<Repository[]>([])
 
@@ -29,12 +31,35 @@ export function RepositoryList() {
             <ul>
                 {repositories.map(repository => {
                     return <RepositoryItem key={repository.name} repository={repository} />
+                    // nota: devemos passar a propriedade key para que o react possa localizar individualmente cada propriedade
                 })}
 
                 {/* {repositories.map(repository => (<RepositoryItem repository={repository} />))} */}
 
                 {/* {repositories.map(repository => <RepositoryItem repository={repository} />)} */}
+
+                {/* os dois itens acima são outras formas de escrever a chamada */}
             </ul>
         </section>
     )
 }
+
+// para passar uma atribuição ao componente filho (no caso RepositoryItem) indicamos logo anexo a ele uma propriedade no caso passamos a propriedade repository="form nome alterado" agora podemos acessar essa informação do componente filho injetando na função filho um argumento chamado props e indicado onde a propriedade irá retornar com {props.repository} assim injetamos a propriedade do elemento onde quisermos
+
+// <RepositoryItem
+//      name="repo name"
+//      description="repo description"
+//      link="https://github.com"
+//      link_name: "repo name link"
+// />
+
+// const repository = {
+//     name: 'repo name',
+//     description: 'repo description',
+//     link: 'https://github.com',
+//     link_name: 'repo name link'
+// }
+
+{/* <RepositoryItem repository={repository} /> */}
+
+// MAS ao INVÉS DE PASSAR SIMPLES TEXTO PODEMOS PASSAR OBJETOS USANDO AS CHAVES {} na linguagem javascript criar um variável e colocar todas as informações dentro de um único objeto
