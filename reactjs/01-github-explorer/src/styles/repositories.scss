@@ -12,10 +12,10 @@ section.repository-list {
         flex-direction: row;
         align-items: center;
         justify-content: left;
-        margin: 0 auto;
         border-radius: 160px;
         height: 200px;
         width: 200px;
+        margin-bottom: 16px;
     }
 
     ul {
@@ -27,6 +27,7 @@ section.repository-list {
             align-items: flex-start;
             justify-content: left;
             margin: 0 auto;
+            border-bottom: 1px solid #f5f5f5;
             & + li {
                 margin-top: 20px;
                 // dentro sass o & faz referência ao próprio elemento e com o + pegamos os próximos elementos, ou seja, ele da margin-top a partir do próximo elemento em referência ao inicial
