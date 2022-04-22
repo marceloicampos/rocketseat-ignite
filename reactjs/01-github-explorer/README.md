@@ -1,6 +1,6 @@
 # rocketseat-ignite-reactjs-modules
 
-01-github-explorer em 06/04/2022
+01-github-explorer em 06/04/2022 - FIM 22/04/2022
 
 # Project REACT JS - GIT HUB EXPLORER
 
