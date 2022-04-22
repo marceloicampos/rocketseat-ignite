@@ -4,7 +4,7 @@
 import { createRoot } from 'react-dom/client'
 import { App } from './App'
 
-createRoot(document.getElementById('root')).render(<App tab="home" />)
+createRoot(document.getElementById('root') as HTMLElement).render(<App />)
 
 // render(<App />, document.getElementById('root'))
 // render(<h1>Test</h1>, document.getElementById('root'))
