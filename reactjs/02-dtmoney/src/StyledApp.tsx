@@ -4,22 +4,24 @@ import styled from "styled-components";
 
 export function StyledApp() {
 
-  const Title = styled.h1`
-    font-size: 64px;
-    color: #8257e6;
+  const Title = styled.div`
+    h1 {
+      font-size: 64px;
+      color: #8257e6;
+      margin: 0 1rem;
+    }
 
     p {
       font-size: 16px;
       color: #000000;
+      margin: 0 1rem;
     }
   `
   return (
-    <div>
-      <Title>
-        Hello World !!!
-        <p>Edit <code>src/App.tsx</code> and save to reload.</p>
-      </Title>
-    </div>
+    <Title>
+      <h1>Hello World !!!</h1>
+      <p>Edit <code>src/App.tsx</code> and save to reload.</p>
+    </Title>
   );
 
   // return (

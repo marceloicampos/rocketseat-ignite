@@ -1,9 +1,11 @@
 .title {
     font-size: 64px;
     color: #8257e6;
+    margin: 0 1rem;
 }
 
 .paragraph {
     font-size: 16px;
     color: #000000;
+    margin: 0 1rem;
 }
