@@ -24,6 +24,8 @@ createServer({
   }
 })
 
+// estamos usando o mirageJS para criar uma fake API para servir dados básicos para a aplicação
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
