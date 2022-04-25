@@ -10,7 +10,7 @@ export function TransactionsTable() {
     // fetch('http://localhost:3000/api/transactions')
     // .then(response => response.json())
     // .then(data => console.log(data))
-    // normalmente fazemos o fetch acima, mas no caso estamos usando o axios
+    // normalmente fazemos o fetch acima para capturar os dados da API, mas no caso estamos usando o axios como um capturador
   }, []);
 
   return (
