@@ -24,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
-      // font-size: 16px; padrão para desktop
+    // font-size: 16px; padrão para desktop
     @media (max-width: 1080px) {
       font-size: 93.75%;
       // é a mesma coisa de font-size: 15px;
