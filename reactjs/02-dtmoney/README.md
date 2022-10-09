@@ -2,6 +2,12 @@
 
 02-dtmoney em 22/04/2022
 
+yarn create react-app dtmoney --template typescript
+
+yarn add react-scripts@latest
+
+yarn add styled-components
+
 # Project REACT JS - DTMONEY
 
 # Getting Started with Create React App
