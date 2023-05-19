@@ -12,7 +12,7 @@ createServer({
     this.get('/transactions', () => {
       return [
         {
-          id:1,
+          id: 1,
           title: 'Fix Site',
           amount: 400,
           type: 'deposit',
