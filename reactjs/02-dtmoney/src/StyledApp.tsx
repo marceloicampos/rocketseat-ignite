@@ -1,10 +1,15 @@
-// import '../src/StyledApp.css'
+// import './StyledApp.css'
+// importação padrão de css
+// yarn add styled-components
+// yarn add @types/styled-components -D
+// instalando o styled-components
 
 import styled from "styled-components";
 
 export function StyledApp() {
 
   const Title = styled.div`
+  // componente estilizado
     h1 {
       font-size: 64px;
       color: #8257e6;
@@ -26,9 +31,7 @@ export function StyledApp() {
 
   // return (
   //   <div>
-  //     <h1 className="title">
-  //       Hello World !!!
-  //     </h1>
+  //     <h1 className="title">Hello World !!!</h1>
   //     <p className="paragraph">Edit <code>src/App.tsx</code> and save to reload.</p>
   //   </div>
   // );
