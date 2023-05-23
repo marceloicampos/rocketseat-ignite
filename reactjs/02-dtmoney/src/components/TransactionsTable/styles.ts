@@ -14,6 +14,14 @@ table {
     line-height: 1.5rem;
   }
 
+  tr {
+    transition: filter 0.2s;
+  
+  &:hover {
+    filter:brightness(0.9)
+  }
+
+  }
   td {
     padding: 1rem 2rem;
     border: 0;
@@ -21,7 +29,7 @@ table {
     color: var(--text-body);
     border-radius: 0.25rem;
 
-    &:first-child {
+  &:first-child {
       color: var(--text-title);
     // esse & a gente fala assim ' quando for o primeiro filho do td use ... '
   }
