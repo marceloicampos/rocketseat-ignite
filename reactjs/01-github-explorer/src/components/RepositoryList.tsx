@@ -32,7 +32,7 @@ export function RepositoryList() {
                 {repositories.map(repository => {
                     return <RepositoryItem key={repository.name} repository={repository} />
                     // nota: devemos passar a propriedade key para que o react possa localizar individualmente cada propriedade
-                })}
+                }).sort().reverse()}
 
                 {/* {repositories.map(repository => (<RepositoryItem repository={repository} />))} */}
 
