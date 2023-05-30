@@ -1,9 +1,10 @@
 import closeSvg from '../../assets/close.svg'
 import logoInSvg from '../../assets/income.svg'
 import logoOutSvg from '../../assets/outcome.svg'
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { ContainerFormModal, TransactionTypeContainer, RadioBox } from "./styles";
 import Modal from 'react-modal'
+import { api } from '../../services/api';
 
 interface NewTransactionModalProps {
   isOpen: boolean
@@ -13,6 +14,20 @@ interface NewTransactionModalProps {
 export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionModalProps) {
 
   const [type, setType] = useState('')
+  const [title, setTitle] = useState('')
+  const [value, setValue] = useState(0)
+  const [category, setCategory] = useState('')
+
+  function handleCreateNewTransaction(event: FormEvent) {
+    event.preventDefault()
+    // acima estamos prevenindo a ação padrão do html atrás da também da tipagem padrão do react pelo FormEvent
+    const data = { type, title, value, category }
+    api.post('/transactions', data)
+    setType('')
+    setTitle('')
+    setValue(0)
+    setCategory('')
+  }
 
   return (
     <Modal
@@ -30,10 +45,20 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
       >
         <img src={closeSvg} alt="botão de fechar o Modal" />
       </button>
-      <ContainerFormModal>
+      <ContainerFormModal onSubmit={handleCreateNewTransaction}>
         <h2>Cadastrar Transação</h2>
-        <input placeholder="Título" />
-        <input type="number" placeholder="Valor" />
+        <input
+          placeholder="Título"
+          value={title}
+          onChange={(event) => setTitle(event.target.value)}
+        />
+        <input
+          type="number"
+          step='0.01'
+          placeholder="Valor"
+          value={value}
+          onChange={(event) => setValue(Number(event.target.value))}
+        />
 
         <TransactionTypeContainer>
           <RadioBox
@@ -56,7 +81,11 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
           </RadioBox>
         </TransactionTypeContainer>
 
-        <input placeholder="Categoria" />
+        <input
+          placeholder="Categoria"
+          value={category}
+          onChange={(event) => setCategory(event.target.value)}
+        />
         <button type="submit">Cadastrar</button>
       </ContainerFormModal>
     </Modal>
