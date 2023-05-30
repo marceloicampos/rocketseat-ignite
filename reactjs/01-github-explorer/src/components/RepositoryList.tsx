@@ -27,7 +27,7 @@ export function RepositoryList() {
             <a href="https://github.com/marceloicampos" target="_blank">
                 <img src="https://avatars.githubusercontent.com/u/71357926?v=4" alt="foto avatar git hub marcelo campos" />
             </a>
-            <h1>Lista de Repositórios - marceloicampos</h1>
+            <h1>Lista de Repositórios Reversa - marceloicampos</h1>
             <ul>
                 {repositories.map(repository => {
                     return <RepositoryItem key={repository.name} repository={repository} />
