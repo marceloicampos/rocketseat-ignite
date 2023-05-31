@@ -27,7 +27,8 @@ table {
     border: 0;
     background: var(--shape);
     color: var(--text-body);
-    border-radius: 0.25rem;
+    font-weight: 600;
+    /* border-radius: 0.25rem; */
 
   &:first-child {
       color: var(--text-title);
