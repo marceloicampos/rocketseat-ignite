@@ -14,20 +14,20 @@ createServer({
     server.db.loadData({
       transactions: [{
         id: 1,
-        title: 'Freelance de Website',
+        title: 'Ganhos ou Gastos',
         type: 'deposit',
-        category: 'Desenvolvimento',
-        amount: 6000,
-        createdAt: new Date("2021-02-28 09:00:00")
+        category: 'categoria',
+        amount: 0,
+        createdAt: new Date("2023-06-01 09:00:00")
       },
-      {
-        id: 2,
-        title: 'Aluguel',
-        type: 'withdraw',
-        category: 'Moradia',
-        amount: 1500,
-        createdAt: new Date("2021-03-05 10:00:00")
-      }
+      // {
+      //   id: 2,
+      //   title: 'Aluguel',
+      //   type: 'withdraw',
+      //   category: 'Moradia',
+      //   amount: 1500,
+      //   createdAt: new Date("2021-03-05 10:00:00")
+      // }
       ]
     })
   },
