@@ -1,29 +1,11 @@
-import { useEffect, useState } from "react";
-import { api } from "../../services/api";
+import { TransactionsContext } from "../../TransactionsContext"
+import { useContext } from "react";
 import { ContainerTransactionsTable } from "./styles";
-
-interface Transaction {
-  id: number
-  title: string
-  type: string
-  category: string
-  amount: number
-  createdAt: string
-}
 
 export function TransactionsTable() {
 
-  const [transactions, setTransactions] = useState<Transaction[]>([])
-
-  useEffect(() => {
-    api.get('/transactions')
-      .then(response => setTransactions(response.data.transactions))
-    // .then(response => console.log(response.data))
-    // fetch('http://localhost:3000/api/transactions')
-    // .then(response => response.json())
-    // .then(data => console.log(data))
-    // normalmente fazemos o fetch acima para capturar os dados da API, mas no caso estamos usando o axios como um capturador
-  }, []);
+  const { transactions } = useContext(TransactionsContext)
+  // console.log(transactions)
 
   return (
     <ContainerTransactionsTable>
