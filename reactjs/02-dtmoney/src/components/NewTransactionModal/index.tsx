@@ -20,13 +20,13 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
   const [amount, setAmount] = useState(0)
   const [category, setCategory] = useState('')
 
-  function handleCreateNewTransaction(event: FormEvent) {
+  async function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault()
     // acima estamos prevenindo a ação padrão do html atrás da também da tipagem padrão do react pelo FormEvent
     // const data = { type, title, value, category }
     // api.post('/transactions', data)
 
-    createTransaction({
+    await createTransaction({
       type, title, amount, category
     })
 
@@ -34,6 +34,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
     setTitle('')
     setAmount(0)
     setCategory('')
+    onRequestClose()
   }
 
   return (
