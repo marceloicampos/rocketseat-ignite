@@ -1,10 +1,10 @@
+import { TransactionsContext } from '../../TransactionsContext'
+import { FormEvent, useState, useContext } from 'react'
+import { ContainerFormModal, TransactionTypeContainer, RadioBox } from "./styles"
 import closeSvg from '../../assets/close.svg'
 import logoInSvg from '../../assets/income.svg'
 import logoOutSvg from '../../assets/outcome.svg'
-import { FormEvent, useState } from 'react';
-import { ContainerFormModal, TransactionTypeContainer, RadioBox } from "./styles";
 import Modal from 'react-modal'
-import { api } from '../../services/api';
 
 interface NewTransactionModalProps {
   isOpen: boolean
@@ -13,19 +13,26 @@ interface NewTransactionModalProps {
 
 export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionModalProps) {
 
+  const { createTransaction } = useContext(TransactionsContext)
+
   const [type, setType] = useState('')
   const [title, setTitle] = useState('')
-  const [value, setValue] = useState(0)
+  const [amount, setAmount] = useState(0)
   const [category, setCategory] = useState('')
 
   function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault()
     // acima estamos prevenindo a ação padrão do html atrás da também da tipagem padrão do react pelo FormEvent
-    const data = { type, title, value, category }
-    api.post('/transactions', data)
+    // const data = { type, title, value, category }
+    // api.post('/transactions', data)
+
+    createTransaction({
+      type, title, amount, category
+    })
+
     setType('')
     setTitle('')
-    setValue(0)
+    setAmount(0)
     setCategory('')
   }
 
@@ -56,8 +63,8 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
           type="number"
           step='0.01'
           placeholder="Valor"
-          value={value}
-          onChange={(event) => setValue(Number(event.target.value))}
+          value={amount}
+          onChange={(event) => setAmount(Number(event.target.value))}
         />
 
         <TransactionTypeContainer>
